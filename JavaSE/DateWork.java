@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 // How to use date in Java
 
 class Test {
+	
 	public static void main(String[] args) {
 		
 		// Working with Date
@@ -36,4 +37,5 @@ class Test {
 		System.out.println(ldt1.getDayOfMonth()+"/"+ldt1.getMonthValue()+"/"+ldt1.getYear());
 		
 	}
+	
 }

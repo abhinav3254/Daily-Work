@@ -72,12 +72,28 @@
 		document.write(a[i]+"<br>");
 		}
 		
-		*/
+		
 		
 		var dob = new Date();
 		
 		document.write(dob.getDate()+" / "+(dob.getMonth()+1)+" / "+(dob.getYear()+1900)+"<br>");
 		document.write(dob.getHours()+" : "+dob.getMinutes()+" : "+dob.getSeconds());
+		
+		
+		JSON --> JavaScript Object Notation
+		
+		*/
+		
+		var emp = {
+		"empId" : 101,
+		"name" : "Aakash",
+		"age" : 18,
+		"deptNo" : 155
+		};
+		
+		document.write(emp.empId+"  <br>"+emp.name+"  <br>"
+		+emp.age+"  <br>"+emp.deptNo+"  ");
+		
 		
 	</script>
 	</body>

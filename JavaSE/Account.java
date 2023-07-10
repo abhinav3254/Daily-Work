@@ -17,8 +17,10 @@ class Account {
 	}
 	
 	public String toString() {
-		return accountNumber+" "+balance+" "
-		+accountHolderName+" "+openedDate;
+		return "Account Number :-"+accountNumber+
+		" \nBalance :- "+balance+
+		" \nAccount Holder Name :- "+accountHolderName+
+		" \nAccount Opening Date :- "+openedDate;
 	}
 	
 }

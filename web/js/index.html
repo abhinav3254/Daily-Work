@@ -4,6 +4,39 @@
 	<body>
 		<script type="text/javascript">
 		document.write("<h1>Hello Universe</h1>");
+		var x = 10;
+		document.write(x+"<br>");
+		x = "Welcome to JS";
+		document.write(x+"<br>");
+		x = 100.75;
+		document.write(x+"<br>");
+		x = false;
+		document.write(x+"<br>");
+		// How to scan a value at run time
+		
+		//var n = prompt("Enter your name");
+		//document.write(n+"<br>");
+		// prompt box considered as string
+		
+		//var first = prompt("Enter First Name");
+		//var Last = prompt("Enter Last Name");
+		
+		//document.write(first+Last+"<br>");
+		
+		var num1 = prompt("Enter num1");
+		var num2 = prompt("Enter num2");
+		// document.write(parseInt(num1)+parseInt(num2)+"<br>");
+		
+		// document.write(parseFloat(num1)+parseFloat(num2));
+		
+		if (num1>num2) {
+		document.write(num1+">"+num2);
+		} else if (num1<num2) {
+		document.write(num2+">"+num1);
+		} else {
+		document.write(num1+"="+num2);
+		}
+		
 	</script>
 	</body>
 </html>

@@ -64,12 +64,20 @@
 		document.write(i+"<br>");
 		}
 		
-		*/
 		
-		var a = new Array(11,12,13,14,15);
+		
+		// var a = new Array(11,12,13,14,15);
+		var a = new Array(11,"Name",13.50,false);
 		for (var i = 0;i<a.length;i++) {
 		document.write(a[i]+"<br>");
 		}
+		
+		*/
+		
+		var dob = new Date();
+		
+		document.write(dob.getDate()+" / "+(dob.getMonth()+1)+" / "+(dob.getYear()+1900)+"<br>");
+		document.write(dob.getHours()+" : "+dob.getMinutes()+" : "+dob.getSeconds());
 		
 	</script>
 	</body>

@@ -4,11 +4,11 @@ public class Employee {
 	int employeeId;
 	String name;
 	double salary;
-	Address address;
+	Address[] address;
 	
 	public Employee () {}
 
-	public Employee(int employeeId, String name, double salary, Address address) {
+	public Employee(int employeeId, String name, double salary, Address[] address) {
 		super();
 		this.employeeId = employeeId;
 		this.name = name;
@@ -40,11 +40,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public Address getAddress() {
+	public Address[] getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(Address[] address) {
 		this.address = address;
 	}
 	

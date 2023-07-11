@@ -35,12 +35,12 @@ class Date {
 	
 	// check for leap year
 	
-	private boolean isLeapYear () {
-		if (year%4 == 0) 
-			return true;
-		else 
-			return false;
-	}
+//	private boolean isLeapYear () {
+//		if (year%4 == 0) 
+//			return true;
+//		else 
+//			return false;
+//	}
 	
 	// If leap year then change feb to 29 else 28
 	

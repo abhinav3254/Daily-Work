@@ -1,0 +1,113 @@
+<html>
+<head>
+<script type="text/javascript">
+/* 
+var s1 = "Hello World";
+var s2 = 'Hello World';
+document.write(s1==s2);
+document.write("<br>");
+document.write(s1.length+"<br>");
+document.write(s1.charAt(6));
+*/
+
+//var a = [10,20,30,40,50];
+//a.push(25);
+//a.push(35);
+
+// splice() is used to delete 
+
+// first 2 means index and second 2 means 2 elements
+// a.splice(2,2);
+// a.splice(1,3);
+
+// a.splice(2,0,-25);
+
+// for (let i of a) 
+// document.write(i+" ");
+
+
+// functions in javascript
+
+/*
+function square(x) {
+return x*x;
+}
+
+function sum(x,y) {
+return x+y;
+}
+function power(x,n) {
+var res = 1;
+for (;n>0;n--)
+res = res * x;
+return res;
+}
+*/
+
+/*
+document.write(square(17)+"<br>");
+document.write(sum(17,17)+"<br>");
+document.write(power(2,3)+"<br>");
+
+*/
+
+/*
+function sum(x=10,y=20) {
+return x+y;
+}
+
+
+
+function sum(x,y=20) {
+return x+y;
+}
+
+*/
+
+
+/*
+function sum(...x) {
+var s = 0;
+for (var i = 0;i<x.length;i++)
+s = s + x[i];
+return s;
+}
+
+*/
+
+var square = x => x*x;
+
+
+var sum = (x,y) => x+y;
+
+
+var power = (x,n) => {
+var res = 1;
+for (;n>0;n--) 
+res = res*x;
+return res;
+}
+
+
+</script>
+</head>
+<body>
+<script>
+
+// NaN means not a number
+
+/*
+
+document.write(sum()+"<br>");
+document.write(sum(10,20,30,40,50,10,20,30,40,50)+"<br>");
+document.write(sum(3,3)+"<br>");
+
+*/
+
+document.write(square(12)+"<br>");
+document.write(sum(20,20)+"<br>");
+document.write(power(2,8)+"<br>");
+
+</script>
+</body>
+</html>

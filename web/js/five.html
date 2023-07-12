@@ -12,19 +12,34 @@
 				t3.value = parseInt(t1)*parseInt(t2);
 			}
 			
+			function validateTextBox(t1,td1) {
+				if (t1.value.length == 0) {
+					td1.hidden = false;
+				} else 
+				td1.hidden = true;
+			}
+			
+			function setFocus(t1) {
+				if (t1.value.length == 0) 
+					t1.focus();
+			}
+			
 		</script>
 	</head>
-	<body>
-		<script type="text/javascript" >
-		</script>
+	<body onLoad = "txt1.focus()">
 		
 		<form>
 			<table align=center widht = 50% border = 1>
 				<tr>
-					<th>First Number</th>
+					<th>
+					First Number<span style = "
+					color:red;
+					">*</span>
+					</th>
 					<td>
-					<input type=text id = "txt1">
+					<input type=text id = "txt1" onKeyUp = "validateTextBox(this,td1)" onBlur = "setFocus(this)">
 					</td>
+					<td id="td1"> Cannot be Empty</td>
 				</tr>
 				<tr>
 					<th>Second Number</th>

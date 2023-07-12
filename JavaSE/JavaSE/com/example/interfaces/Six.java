@@ -10,17 +10,27 @@ interface Utility {
 	public static int sum(int x,int y) {
 		return x+y;
 	}
-	public static int square (int x) {
+	default public int square (int x) {
 		return x*x;
 	}
 	
 }
 
+class AbcUtility implements Utility {
+	
+}
+
 class Test {
 	public static void main(String[] args) {
-		Utility u = new Utility();
+		
+		AbcUtility a = new AbcUtility();
+		//Utility u = new Utility();
 		System.out.println(Utility.sum(101,202));
-		System.out.println(Utility.square(10));
+		
+		
+		// How to access square method it is default
+		System.out.println("Square method :- "+a.square(10));
+		
 		System.out.println(Utility.power(2,4));
 	}
 }

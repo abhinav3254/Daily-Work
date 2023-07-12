@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+	<h1>JS</h1>
+		<script type="text/javascript" >
+		// 		SET IN JS
+		
+		/*
+			var s = new Set();
+			s.add("hello");
+			s.add("Welcome");
+			s.add("Apple");
+			s.add("Something");
+			document.write(s.size+"<br>");
+			document.write(s.has("Apple")+"<br>");
+			document.write(s.delete("Welcome")+"<br>");
+			
+			for (let i of s)
+				document.write(i+"<br>");
+			
+		
+		*/
+		
+		
+		var map = new Map();
+		
+		map.set("Abc@gmail.com","Abc@123");
+		map.set("Xyz@yahoo.com","Xyz@123");
+		map.set("Bbc@rediff.com","Bbc@123");
+		map.set("something@coolmail.com","Cool@123");
+		
+		document.write(map.size+"<br>");
+		document.write(map.has("Bbc@rediff.com")+"<br>");
+		document.write(map.get("Xyz@yahoo.com")+"<br>");
+		
+		document.write("<h1>Only Keys</h1>");
+		for(let k of map.keys())
+			document.write(k+"<br>");
+		
+		document.write("<h1>Only Values</h1>");
+		for(let v of map.values())
+			document.write(v+"<br>");
+		document.write("<h1>Keys Values</h1>");
+		for (let e of map.entries()) 
+			document.write(e+"<br>");
+		
+		</script>
+		
+	</body>
+</html>

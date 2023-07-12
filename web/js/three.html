@@ -1,6 +1,18 @@
 <html>
 	<head>
 		<script type="text/javascript">
+		/*
+			function showMessage() {
+			alert('Hello Universe2');
+			}
+			
+			*/
+			
+			function showMessage() {
+			var tValue = document.getElementById("txt1").value;
+			alert("Hello Mr. "+tValue);
+			
+			}
 			
 		</script>
 	</head>
@@ -23,7 +35,7 @@
 				document.write(i+"<br>");
 			
 		
-		*/
+		
 		
 		
 		var map = new Map();
@@ -48,7 +60,28 @@
 		for (let e of map.entries()) 
 			document.write(e+"<br>");
 		
+		*/
+		
 		</script>
+		
+		<!--DOM-->
+		
+		<!--
+		<input type = button value = "click me" onClick = "javascript:alert('Hello Universe1')">
+		
+			<input type = button value = "click me" onClick = "showMessage()">
+			
+		-->
+		
+		<form>
+		
+			<input type = input id = "txt1"
+			>
+		
+			<input type = button value = "click me" onClick = "showMessage()"
+			>
+			
+		</form>
 		
 	</body>
 </html>

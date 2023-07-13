@@ -1,0 +1,8 @@
+source code	${basedir}/src/main/java
+Resources	${basedir}/src/main/resources
+Tests	${basedir}/src/test
+Complied byte code	${basedir}/target
+distributable JAR	${basedir}/target/classes
+
+
+Note :- If in case if any folder is not found create the folder

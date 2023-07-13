@@ -14,6 +14,8 @@ public class UtilityTwo {
 		c();
 	}
 	
+	// unchecked exception
+	
 	public static int divide (int x,int y) throws ArithmeticException {
 		if (y!=0)
 			return x/y;

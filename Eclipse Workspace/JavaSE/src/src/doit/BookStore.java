@@ -44,20 +44,24 @@ public class BookStore {
 		}
 	}
 	
-	public boolean searchBookTitle(String title,Book book1) {
-		for (int i = 0;i<size;i++) {
-			if (title.equals(book1.getBookTitle())) {
+	public boolean searchBookTitle(String title,Book[] book1) {
+		Book[] book = getBook();
+		
+		for (int i=0;i<size;i++) {
+			if (title.equals(book[i].getBookTitle())) {
 				return true;
-			} 
+			}
 		}
 		return false;
 	}
 	
-	public boolean searchBookcategory(String category,Book book1) {
-		for (int i = 0;i<size;i++) {
-			if (category.equals(book1.getBookcategory())) {
+	public boolean searchBookcategory(String category,Book[] book1) {
+		Book[] book = getBook();
+		
+		for (int i=0;i<size;i++) {
+			if (category.equals(book[i].getBookcategory())) {
 				return true;
-			} 
+			}
 		}
 		return false;
 	}
@@ -71,7 +75,7 @@ public class BookStore {
 			System.out.println("book Author"+book[i].getBookAuthor());
 			System.out.println("Book Price"+book[i].getBookPrice());
 			System.out.println("Book category"+book[i].getBookcategory());
-			System.out.println("***************8");
+			System.out.println("***************");
 		}
 	}
 	

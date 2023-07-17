@@ -27,6 +27,7 @@ public class Demo2 {
 		for (int i = 65;i<=90;i++) {
 			fileWriter.write(i);
 		}
+		fileWriter.close();
 	}
 
 }

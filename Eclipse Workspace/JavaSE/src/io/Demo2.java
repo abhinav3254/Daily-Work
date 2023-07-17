@@ -1,6 +1,7 @@
 package io;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Demo2 {
@@ -14,6 +15,12 @@ public class Demo2 {
 			System.out.print((char)ch);
 		}
 		fileInputStream.close();
+		
+		FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\AbKumar\\Desktop\\assignment\\abc.txt");
+		for (int i = 97; i >= 0; i--) {
+			fileOutputStream.write(i);
+		}
+		fileOutputStream.close();
 	}
 
 }

@@ -2,6 +2,7 @@ package io;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Demo2 {
@@ -16,11 +17,16 @@ public class Demo2 {
 		}
 		fileInputStream.close();
 		
-		FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\AbKumar\\Desktop\\assignment\\abc.txt");
+		FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\AbKumar\\Desktop\\assignment\\abc.txt",true);
 		for (int i = 65; i <= 90; i++) {
 			fileOutputStream.write(i);
 		}
 		fileOutputStream.close();
+		
+		FileWriter fileWriter= new FileWriter("C:\\Users\\AbKumar\\Desktop\\assignment\\abc.txt");
+		for (int i = 65;i<=90;i++) {
+			fileWriter.write(i);
+		}
 	}
 
 }

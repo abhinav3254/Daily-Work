@@ -17,7 +17,7 @@ public class Demo2 {
 		fileInputStream.close();
 		
 		FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\AbKumar\\Desktop\\assignment\\abc.txt");
-		for (int i = 97; i >= 0; i--) {
+		for (int i = 65; i <= 90; i++) {
 			fileOutputStream.write(i);
 		}
 		fileOutputStream.close();

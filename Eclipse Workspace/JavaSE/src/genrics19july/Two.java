@@ -2,9 +2,21 @@ package genrics19july;
 
 public class Two {
 	public static void main(String[] args) {
+		/*
 		Integer[] integers = new Integer[10];
 		MyStack<Integer> myStack = new MyStack(integers);
 		for (int i = 1;i<=10;i++) {
+			myStack.push(i);
+		}
+		
+		for (int i = 1;i<11;i++) {
+			System.out.println(myStack.pop());
+		}
+		*/
+		
+		Double[] doubles = new Double[10];
+		MyStack myStack = new MyStack(doubles);
+		for (double i = 1;i<=10;i++) {
 			myStack.push(i);
 		}
 		
@@ -31,6 +43,29 @@ class Stack<T> {
 	}
 }
 
+
+class MyStack extends Stack<Double> {
+	
+	public MyStack(Double[] a) {
+		super(a);
+	}
+
+	public void push(Double element) {
+		if(!isFull())
+			a[++index] = element;
+		else
+			throw new RuntimeException("Stack Overflow :- cannot insert more elements");
+	}
+	
+	public Double pop() {
+		if (!isEmpty())
+			return a[index--];
+		else 
+			throw new RuntimeException("Stack Underflow");
+	}
+}
+
+/*
 class MyStack<T> extends Stack<T> {
 	
 	public MyStack(T[] a) {
@@ -51,3 +86,4 @@ class MyStack<T> extends Stack<T> {
 			throw new RuntimeException("Stack Underflow");
 	}
 }
+*/

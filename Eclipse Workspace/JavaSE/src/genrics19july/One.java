@@ -39,5 +39,4 @@ class TypeSafetyDemo<T extends Number> {
 	public double sum1(T num1,T num2) {
 		return num1.doubleValue()+num2.doubleValue();
 	}
-	
 }

@@ -23,13 +23,5 @@ public class CustomList {
 		list.add(new Employee(102, "Bhavesh", 15000));
 		list.add(new Employee(104, "Utkarsh", 14000));
 		list.add(new Employee(106, "Anand", 20000));
-//		list.add(new Employee(108, "Gautam", 22222));
-//		
-//		System.out.println(list.toString());
-//		
-//		System.out.println(list.remove(list.add(new Employee(106, "Anand", 20000))));
-//		System.out.println();
-//		System.out.println(list.toString());
-//		
 	}
 }

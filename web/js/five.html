@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<script type="text/javascript" >
+			function getResults(t1,t2,t3,bValue) {
+				if (bValue == 'ADD')
+					t3.value = parseInt(t1)+parseInt(t2);
+				else if (bValue == 'SUB')
+				t3.value = parseInt(t1)-parseInt(t2);
+				else if (bValue == 'DIV')
+				t3.value = parseInt(t1)/parseInt(t2);
+				else if (bValue == 'MUL')
+				t3.value = parseInt(t1)*parseInt(t2);
+			}
+			
+			function validateTextBox(t1,td1) {
+				if (t1.value.length == 0) {
+					td1.hidden = false;
+				} else 
+				td1.hidden = true;
+			}
+			
+			function setFocus(t1) {
+				if (t1.value.length == 0) 
+					t1.focus();
+			}
+			
+		</script>
+	</head>
+	<body onLoad = "txt1.focus()">
+		
+		<form>
+			<table align=center widht = 50% border = 1>
+				<tr>
+					<th>
+					First Number<span style = "
+					color:red;
+					">*</span>
+					</th>
+					<td>
+					<input type=text id = "txt1" onKeyUp = "validateTextBox(this,td1)" onBlur = "setFocus(this)">
+					</td>
+					<td id="td1"> Cannot be Empty</td>
+				</tr>
+				<tr>
+					<th>Second Number</th>
+					<td>
+					<input type=text id = "txt2">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>Results</th>
+					<td>
+					<input type=text id = "txt3">
+					</td>
+				</tr>
+				
+				<tr>
+					<td><input type=button value ="ADD" onClick="getResults(txt1.value,txt2.value,txt3,this.value)">
+					</td>
+					<td><input type=button value ="SUB"
+					onClick="getResults(txt1.value,txt2.value,txt3,this.value)">
+					</td>
+				</tr>
+				<tr>
+					<td><input type=button value ="MUL"
+					onClick="getResults(txt1.value,txt2.value,txt3,this.value)">
+					</td>
+					<td><input type=button value ="DIV"
+					onClick="getResults(txt1.value,txt2.value,txt3,this.value)">
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+	</body>
+</html>

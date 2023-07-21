@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<script type="text/javascript" >
+			function sum() {
+				var t1 = document.getElementById("txt1").value;
+				var t2 = document.getElementById("txt2").value;
+				document.getElementById("txt3").value = parseInt(t1) + parseInt(t2);
+			}
+			
+			function sub() {
+				var t1 = document.getElementById("txt1").value;
+				var t2 = document.getElementById("txt2").value;
+				document.getElementById("txt3").value = parseInt(t1) - parseInt(t2);
+			}
+			
+			function mul() {
+				var t1 = document.getElementById("txt1").value;
+				var t2 = document.getElementById("txt2").value;
+				document.getElementById("txt3").value = parseInt(t1) * parseInt(t2);
+			}
+			
+			function div() {
+				var t1 = document.getElementById("txt1").value;
+				var t2 = document.getElementById("txt2").value;
+				document.getElementById("txt3").value = parseInt(t1) / parseInt(t2);
+			}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript" >
+		</script>
+		
+		<form>
+			<table align=center widht = 50% border = 1>
+				<tr>
+					<th>First Number</th>
+					<td>
+					<input type=text id = "txt1">
+					</td>
+				</tr>
+				<tr>
+					<th>Second Number</th>
+					<td>
+					<input type=text id = "txt2">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>Results</th>
+					<td>
+					<input type=text id = "txt3">
+					</td>
+				</tr>
+				
+				<tr>
+					<td><input type=button value ="ADD" onClick="sum()">
+					</td>
+					<td><input type=button value ="SUB"
+					onClick="sub()">
+					</td>
+				</tr>
+				<tr>
+					<td><input type=button value ="MUL"
+					onClick="mul()">
+					</td>
+					<td><input type=button value ="DIV"
+					onClick="div()">
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+	</body>
+</html>

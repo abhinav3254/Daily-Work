@@ -1,4 +1,4 @@
-import { Directive } from "@angular/core";
+import { Directive, HostBinding, HostListener } from "@angular/core";
 import { ElementRef } from "@angular/core";
 
 @Directive({
@@ -6,11 +6,21 @@ import { ElementRef } from "@angular/core";
 })
 
 export class AddColorDirective {
+
     constructor(private elementRef: ElementRef) {
         this.elementRef.nativeElement.style.backgroundColor = 'red';
     }
 
-    addColors(col: string) {
+    @HostListener('mouseover')
+    onMouseover() {
+        this.bgColor = 'purple';
     }
+
+    @HostListener('mouseleave')
+    onMouseleave() {
+        this.bgColor = 'green';
+    }
+
+    @HostBinding('style.backgroundColor') bgColor: string = "";
 
 }

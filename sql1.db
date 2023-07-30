@@ -1,0 +1,159 @@
+SHOW DATABASES;
+
+
+CREATE DATABASE ABHINAV;
+
+USE ABHINAV;
+
+CREATE TABLE STUDENTS(
+S_ID INT NOT NULL PRIMARY KEY,
+S_LASTNAME VARCHAR(55) NOT NULL,
+S_FIRSTNAME VARCHAR(55) NOT NULL
+);
+
+
+CREATE TABLE CONTACTS(
+S_ID INT NOT NULL PRIMARY KEY,
+CITY VARCHAR(55) NOT NULL,
+PHONE VARCHAR(55) NOT NULL,
+FOREIGN KEY (S_ID) REFERENCES STUDENTS (S_ID)
+);
+
+SHOW TABLES;
+DESC CONTACTS;
+DESC STUDENTS;
+
+INSERT INTO STUDENTS (S_ID,S_LASTNAME,S_FIRSTNAME)
+VALUES(77895,'Hansen','Ola');
+
+INSERT INTO STUDENTS (S_ID,S_LASTNAME,S_FIRSTNAME)
+VALUES(44678,'Svendson','Tove');
+
+INSERT INTO STUDENTS (S_ID,S_LASTNAME,S_FIRSTNAME)
+VALUES(22456,'Pettersen','Kari');
+
+INSERT INTO STUDENTS (S_ID,S_LASTNAME,S_FIRSTNAME)
+VALUES(52456,'saini','krati');
+
+INSERT INTO STUDENTS (S_ID,S_LASTNAME,S_FIRSTNAME)
+VALUES(34789,'LAWRENECE','KEVIN');
+
+SELECT * FROM STUDENTS;
+
+INSERT INTO CONTACTS (S_ID,CITY,PHONE)
+VALUES(77895,'DUBLIN','+1 675929');
+
+INSERT INTO CONTACTS (S_ID,CITY,PHONE)
+VALUES(44678,'FLORIDA','+22 7610955');
+
+INSERT INTO CONTACTS (S_ID,CITY,PHONE)
+VALUES(22456,'STOKHOLAM','+78 16302');
+
+INSERT INTO CONTACTS (S_ID,CITY,PHONE)
+VALUES(34789,'london','+2 54321');
+
+
+SELECT * FROM CONTACTS;
+SELECT * FROM STUDENTS;
+
+SELECT CONTACTS.S_ID,CONTACTS.CITY,CONTACTS.PHONE,STUDENTS.S_FIRSTNAME,STUDENTS.S_LASTNAME
+FROM STUDENTS 
+INNER JOIN CONTACTS ON CONTACTS.S_ID = STUDENTS.S_ID;
+
+
+select * from contacts inner join students on CONTACTS.S_ID = STUDENTS.S_ID;
+
+select * from contacts right join students on CONTACTS.S_ID = STUDENTS.S_ID;
+
+select * from contacts left join students on CONTACTS.S_ID = STUDENTS.S_ID;
+
+
+create table customers(
+c_id int primary key auto_increment,
+c_name varchar(55),
+c_phone varchar(55),
+c_city varchar (40)
+)auto_increment = 7002;
+
+
+create table orders(
+c_id int,
+o_id int primary key auto_increment,
+o_name varchar(55),
+o_city varchar(40),
+foreign key (c_id) references customers(c_id)
+)auto_increment = 11111;
+
+insert into customers (c_name,c_phone,c_city)
+values ("Nisha Singh","+91 9123456780","Gaya");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Rajesh Verma","+91 8765432109","Bhagalpur");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Smita Jha","+91 8234567891","Muzaffarpur");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Vikas Yadav","+91 7890123456","Darbhanga");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Priya Sharma","+91 8901234567","Bihar Sharif");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Anita Devi","+91 7890123456","Purnia");
+
+insert into customers (c_name,c_phone,c_city)
+values ("Sameer Khan","+91 6789012345","Hajipur");
+
+select * from customers;
+
+
+insert into orders (c_id,o_name,o_city)
+values (7003,'Sattu Paratha','Gaya');
+
+insert into orders (c_id,o_name,o_city)
+values (7004,'Dal Puri','Bhagalpur');
+
+insert into orders (c_id,o_name,o_city)
+values (7005,'Thekua','Muzaffarpur');
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Khaja	','Darbhanga');
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Sushi	','Darbhanga');
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Butter Chicken','Darbhanga');
+
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Pizza Margherita	','Darbhanga');
+
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Spaghetti Carbonara	','Darbhanga');
+
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Tandoori Chicken	','Darbhanga');
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Pad Thai	','Darbhanga');
+
+insert into orders (c_id,o_name,o_city)
+values (7006,'Biryani	','Darbhanga');
+
+insert into orders (c_id,o_name,o_city)
+values (7007,'Chana Ghugni','Bihar Sharif');
+
+
+select * from orders;
+
+select * from customers inner join orders on customers.c_id = orders.c_id;
+
+select * from customers left join orders on customers.c_id = orders.c_id;
+
+select * from customers right join orders on customers.c_id = orders.c_id;
+
+select * from orders where orders.c_id = 7006;

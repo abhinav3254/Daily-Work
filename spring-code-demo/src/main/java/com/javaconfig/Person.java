@@ -1,11 +1,12 @@
 package com.javaconfig;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class Person {
 	private int ssn;
 	private String name;
 	private int age;
+	@Autowired
 	private Address address;
 	public Person() {
 		super();
@@ -44,5 +45,13 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [ssn=" + ssn + ", name=" + name + ", age=" + age + ", address=" + address + "]";
+	}
+	
+	public void destroyPerson() {
+		System.out.println("Destroy Person Method");
+	}
+	
+	public void inItPerson() {
+		System.out.println("Init Person Method");
 	}
 }

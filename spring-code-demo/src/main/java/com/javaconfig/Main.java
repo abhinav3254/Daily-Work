@@ -7,5 +7,7 @@ public class Main {
 		AnnotationConfigApplicationContext conatiner = new AnnotationConfigApplicationContext(Config.class);
 		Person p = conatiner.getBean(Person.class);
 		System.out.println(p);
+		
+		conatiner.close();
 	}
 }

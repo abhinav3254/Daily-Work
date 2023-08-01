@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -9,23 +11,46 @@
 		<property name="message" value="This is Abhinav Kumar Jha" />
 	</bean>
 	
-	<!-- This is setter dependency injection because we have used property -->
+	<!-- If we use constructor-arg instead of property then it will inject dependency through constructor -->
+
 	
-	<bean id="add1" class="com.example.Address">
-	<property name="hNo" value="#214-sector 1"></property>
+	<!-- This is setter dependency injection because we have used property -->
+	<!-- use this in line 3:- then only use p(p-name-space) xmlns:p="http://www.springframework.org/schema/p" -->
+	
+	
+	<bean id="add1" class="com.example.Address" p:hNo="p-#214-sector 1" p:streetName="street number 2\2 parag street" p:city = "Darbhanga" p:state="Bihar"/>
+	
+	
+	<!-- <property name="hNo" value="#214-sector 1"></property>
 	<property name="streetName" value="street number 2\2 parag street"></property>
 	<property name="city" value="Darbhanga"></property>
 	<property name="state" value="Bihar"></property>
 	</bean>
 	
+	
+	
+	<bean id="add2" class="com.example.Address">
+	<property name="hNo" value="44/45"></property>
+	<property name="streetName" value="street 22 jubin road"></property>
+	<property name="city" value="Madhubani"></property>
+	<property name="state" value="Bihar"></property>
+	</bean>
+	
+	-->
+	
 	<!-- This is setter dependency injection because we have used property -->
 	
-	<bean id="person1" class="com.example.Person">
+	<bean id="person1" class="com.example.Person" p:ssn = "120" p:name="Abhinav Kumar" p:age="21" p:address-ref = "add1"/>
+	
+	<!-- 
 	<property name="ssn" value="120"></property>
 	<property name="name" value="Abhinav Jha"></property>
 	<property name="age" value="22"></property>
 	<property name="address" ref="add1"></property>
 	
 	</bean>
+ 	-->
+	
+	
 
 </beans>

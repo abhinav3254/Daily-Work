@@ -2,13 +2,15 @@ package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Person {
-	private int ssn;
-	private String name;
-	private int age;
+	private int ssn = 12;
+	private String name = "Abhinav Jha";
+	private int age = 22;
 	@Autowired
-	@Qualifier("add")
+//	@Qualifier("add")
 	private Address address;
 	public Person() {
 		super();

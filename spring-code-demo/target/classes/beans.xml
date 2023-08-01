@@ -8,5 +8,24 @@
 	<bean id="wish1" class="com.example.Wish" destroy-method="wishDestroy" init-method="wishInit">
 		<property name="message" value="This is Abhinav Kumar Jha" />
 	</bean>
+	
+	<!-- This is setter dependency injection because we have used property -->
+	
+	<bean id="add1" class="com.example.Address">
+	<property name="hNo" value="#214-sector 1"></property>
+	<property name="streetName" value="street number 2\2 parag street"></property>
+	<property name="city" value="Darbhanga"></property>
+	<property name="state" value="Bihar"></property>
+	</bean>
+	
+	<!-- This is setter dependency injection because we have used property -->
+	
+	<bean id="person1" class="com.example.Person">
+	<property name="ssn" value="120"></property>
+	<property name="name" value="Abhinav Jha"></property>
+	<property name="age" value="22"></property>
+	<property name="address" ref="add1"></property>
+	
+	</bean>
 
 </beans>

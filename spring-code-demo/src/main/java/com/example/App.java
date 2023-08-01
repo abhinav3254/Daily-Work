@@ -1,7 +1,7 @@
 package com.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import java.util.Map.Entry;
 /**
  * Hello world!
  *
@@ -18,6 +18,9 @@ public class App {
         
         Country country = container.getBean("ctry",Country.class);
         System.out.println(country);
+        
+        for(Entry<String, String> e: country.getStates().entrySet())
+        	System.out.println(e.getKey()+"    "+e.getValue());
         
         container.close();
     }

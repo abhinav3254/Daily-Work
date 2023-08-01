@@ -68,7 +68,6 @@
 			<value>Meghalaya</value>
 			</list>
 			
-			 -->
 			<set>
 			<value>Andhra Pradesh</value>
 			<value>Arunachal Pradesh</value>
@@ -87,6 +86,19 @@
 			<value>Manipur</value>
 			<value>Meghalaya</value>
 			</set>
+			-->
+			<map>
+			<entry key="AP" value="Andhra Pradesh"></entry>
+			<entry key="ACP" value="Arunachal Pradesh"></entry>
+			<entry key="AS" value="Assam"></entry>
+			<entry key="BR" value="Bihar"></entry>
+			<entry key="CG" value="Chhattisgarh"></entry>
+			<entry key="GA" value="Goa"></entry>
+			<entry key="GJ" value="Gujrat"></entry>
+			<entry key="HR" value="Haryana"></entry>
+			<entry key="HP" value="Himachal Pradesh"></entry>
+			<entry key="JH" value="Jharkhand"></entry>
+			</map>
 		</property>
 	</bean>
 

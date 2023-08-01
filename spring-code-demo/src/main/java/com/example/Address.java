@@ -1,11 +1,14 @@
 package com.example;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
 	
-	private String hNo;
-	private String streetName;
-	private String city;
-	private String state;
+	private String hNo = "9/21/22";
+	private String streetName = "9th down street M.G. Road";
+	private String city = "Darbhanga";
+	private String state = "Bihar";
 	public Address(String hNo, String streetName, String city, String state) {
 		super();
 		this.hNo = hNo;

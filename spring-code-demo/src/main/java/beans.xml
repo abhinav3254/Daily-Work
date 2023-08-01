@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:p="http://www.springframework.org/schema/p"
-xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-<!-- XML defination of the bean -->
-	<bean id="wish1" class="com.example.Wish" destroy-method="wishDestroy" init-method="wishInit">
-		<property name="message" value="This is Abhinav Kumar Jha" />
-	</bean>
-	
-	<!-- If we use constructor-arg instead of property then it will inject dependency through constructor -->
 
-	
+
+	<!-- XML defination of the bean -->
+	<!-- <bean id="wish1" class="com.example.Wish" destroy-method="wishDestroy" 
+		init-method="wishInit"> -->
+	<!-- <property name="message" value="This is Abhinav Kumar Jha" /> </bean> -->
+	<!-- If we use constructor-arg instead of property then it will inject dependency 
+		through constructor -->
+
+
 	<!-- This is setter dependency injection because we have used property -->
 	<!-- use this in line 3:- then only use p(p-name-space) xmlns:p="http://www.springframework.org/schema/p" -->
-	
-	
-	<!-- <bean id="add1" class="com.example.Address" p:hNo="p-#214-sector 1" p:streetName="street number 2\2 parag street" p:city = "Darbhanga" p:state="Bihar"/> -->
-	
-	<bean id="add1" class="com.example.Address" c:hNo="c-#214-sector 1" c:streetName="street number 2\2 parag street" c:city = "Darbhanga" c:state="Bihar"/>
-	
-	<!-- <property name="hNo" value="#214-sector 1"></property>
-	<property name="streetName" value="street number 2\2 parag street"></property>
-	<property name="city" value="Darbhanga"></property>
-	<property name="state" value="Bihar"></property>
-	</bean>
-	
-	
-	
-	<bean id="add2" class="com.example.Address">
-	<property name="hNo" value="44/45"></property>
-	<property name="streetName" value="street 22 jubin road"></property>
-	<property name="city" value="Madhubani"></property>
-	<property name="state" value="Bihar"></property>
-	</bean>
-	
-	-->
-	
+
+
+	<!-- <bean id="add1" class="com.example.Address" p:hNo="p-#214-sector 1" 
+		p:streetName="street number 2\2 parag street" p:city = "Darbhanga" p:state="Bihar"/> -->
+
+	<bean id="add1" class="com.example.Address"
+		c:hNo="c-#214-sector 1" c:streetName="street number 2\2 parag street"
+		c:city="Darbhanga" c:state="Bihar" />
+
+	<!-- <property name="hNo" value="#214-sector 1"></property> <property name="streetName" 
+		value="street number 2\2 parag street"></property> <property name="city" 
+		value="Darbhanga"></property> <property name="state" value="Bihar"></property> 
+		</bean> <bean id="add2" class="com.example.Address"> <property name="hNo" 
+		value="44/45"></property> <property name="streetName" value="street 22 jubin 
+		road"></property> <property name="city" value="Madhubani"></property> <property 
+		name="state" value="Bihar"></property> </bean> -->
+
 	<!-- This is setter dependency injection because we have used property -->
-	
-	<bean id="person1" class="com.example.Person" p:ssn = "120" p:name="Abhinav Kumar" p:age="21" p:address-ref = "add1"/>
-	
-	<!-- 
-	<property name="ssn" value="120"></property>
-	<property name="name" value="Abhinav Jha"></property>
-	<property name="age" value="22"></property>
-	<property name="address" ref="add1"></property>
-	
+
+	<bean id="person1" class="com.example.Person" p:ssn="120"
+		p:name="Abhinav Kumar" p:age="21" p:address-ref="add1" />
+
+	<!-- <property name="ssn" value="120"></property> <property name="name" 
+		value="Abhinav Jha"></property> <property name="age" value="22"></property> 
+		<property name="address" ref="add1"></property> </bean> -->
+
+	<bean id="ctry" class="com.example.Country">
+		<property name="countryName" value="India"></property>
+		<property name="currencyName" value="Rupees"></property>
+		<property name="states">
+			<list>
+			<value>Andhra Pradesh</value>
+			<value>Arunachal Pradesh</value>
+			<value>Assam</value>
+			<value>Bihar</value>
+			<value>Chhattisgarh</value>
+			<value>Goa</value>
+			<value>Gujrat</value>
+			<value>Haryana</value>
+			<value>Himachal Pradesh</value>
+			<value>Jharkhand</value>
+			<value>Karnataka</value>
+			<value>Kerla</value>
+			<value>Madhya Pradesh</value>
+			<value>Maharastra</value>
+			<value>Manipur</value>
+			<value>Meghalaya</value>
+			</list>
+		</property>
 	</bean>
- 	-->
-	
-	
+
 
 </beans>

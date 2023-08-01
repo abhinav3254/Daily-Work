@@ -5,13 +5,32 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Config {
-	@Bean
+	/*
+	@Bean()
+
 	public Address address() {
 		return new Address("12","6th Downstreet","Darbhaga","Bihar");
 	}
 	
-	@Bean
+	@Bean(initMethod = "inItPerson",destroyMethod = "destroyPerson")
+//	@Scope("prototype")
 	public Person person() {
 		return new Person(1234,"Abhinav Kumar",22,address());
+	}
+	*/
+	
+//	@Bean(autowireCandidate = true)
+	@Bean()
+	public Address address() {
+		return new Address("12","6th Downstreet","Darbhaga","Bihar");
+	}
+	
+	@Bean()
+	public Person person() {
+		Person person = new Person();
+		person.setSsn(101);
+		person.setName("Ajay Saxena");
+		person.setAge(22);
+		return person;
 	}
 }

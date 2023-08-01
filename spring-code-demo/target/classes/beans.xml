@@ -67,14 +67,22 @@
 		</bean> -->
 
 <context:annotation-config></context:annotation-config>
-
-	<bean id="address" class="com.example.Address">
+ 
+	<bean id="add2" class="com.example.Address">
 		<property name="hNo" value="#214-sector-1"></property>
 		<property name="streetName"
 			value="street number 2\2 parag street"></property>
 		<property name="city" value="Darbhanga"></property>
 		<property name="state" value="Bihar"></property>
 	</bean>
+	 
+	<bean id="add" class="com.example.Address">
+		<property name="hNo" value="$14-sector-2"></property>
+		<property name="streetName" value="street number 22 MG street"></property>
+		<property name="city" value="Madhubani"></property>
+		<property name="state" value="Bihar"></property>
+	</bean>
+	
 	<bean id="person" class="com.example.Person">
 		<property name="ssn" value="120"></property>
 		<property name="name" value="Abhinav Jha"></property>

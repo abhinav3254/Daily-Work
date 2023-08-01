@@ -1,12 +1,14 @@
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Person {
 	private int ssn;
 	private String name;
 	private int age;
 	@Autowired
+	@Qualifier("add")
 	private Address address;
 	public Person() {
 		super();

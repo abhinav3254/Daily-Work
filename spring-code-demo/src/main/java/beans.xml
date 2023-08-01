@@ -48,6 +48,7 @@
 		<property name="countryName" value="India"></property>
 		<property name="currencyName" value="Rupees"></property>
 		<property name="states">
+		<!-- 
 			<list>
 			<value>Andhra Pradesh</value>
 			<value>Arunachal Pradesh</value>
@@ -66,6 +67,26 @@
 			<value>Manipur</value>
 			<value>Meghalaya</value>
 			</list>
+			
+			 -->
+			<set>
+			<value>Andhra Pradesh</value>
+			<value>Arunachal Pradesh</value>
+			<value>Assam</value>
+			<value>Bihar</value>
+			<value>Chhattisgarh</value>
+			<value>Goa</value>
+			<value>Gujrat</value>
+			<value>Haryana</value>
+			<value>Himachal Pradesh</value>
+			<value>Jharkhand</value>
+			<value>Karnataka</value>
+			<value>Kerla</value>
+			<value>Madhya Pradesh</value>
+			<value>Maharastra</value>
+			<value>Manipur</value>
+			<value>Meghalaya</value>
+			</set>
 		</property>
 	</bean>
 

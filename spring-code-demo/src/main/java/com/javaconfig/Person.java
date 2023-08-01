@@ -1,11 +1,20 @@
 package com.javaconfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+//@Component
+//@Service
+//@Repository
+//@Controller
+@Component
 public class Person {
-	private int ssn;
-	private String name;
-	private int age;
+	private int ssn = 101;
+	private String name ="Abhinav Jha";
+	private int age = 20;
 	@Autowired
 	private Address address;
 	public Person() {

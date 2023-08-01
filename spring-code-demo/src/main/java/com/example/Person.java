@@ -1,9 +1,12 @@
 package com.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Person {
 	private int ssn;
 	private String name;
 	private int age;
+	@Autowired
 	private Address address;
 	public Person() {
 		super();

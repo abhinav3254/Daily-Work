@@ -23,10 +23,9 @@
 	<!-- <bean id="add1" class="com.example.Address" p:hNo="p-#214-sector 1" 
 		p:streetName="street number 2\2 parag street" p:city = "Darbhanga" p:state="Bihar"/> -->
 
-	<bean id="add1" class="com.example.Address"
-		c:hNo="c-#214-sector 1" c:streetName="street number 2\2 parag street"
-		c:city="Darbhanga" c:state="Bihar" />
-
+	<!-- <bean id="add1" class="com.example.Address" c:hNo="c-#214-sector 1" 
+		c:streetName="street number 2\2 parag street" c:city="Darbhanga" c:state="Bihar" 
+		/> -->
 	<!-- <property name="hNo" value="#214-sector 1"></property> <property name="streetName" 
 		value="street number 2\2 parag street"></property> <property name="city" 
 		value="Darbhanga"></property> <property name="state" value="Bihar"></property> 
@@ -37,70 +36,46 @@
 
 	<!-- This is setter dependency injection because we have used property -->
 
-	<bean id="person1" class="com.example.Person" p:ssn="120"
-		p:name="Abhinav Kumar" p:age="21" p:address-ref="add1" />
-
+	<!-- <bean id="person1" class="com.example.Person" p:ssn="120" p:name="Abhinav 
+		Kumar" p:age="21" p:address-ref="add1" /> -->
 	<!-- <property name="ssn" value="120"></property> <property name="name" 
 		value="Abhinav Jha"></property> <property name="age" value="22"></property> 
 		<property name="address" ref="add1"></property> </bean> -->
+	<!-- <bean id="ctry" class="com.example.Country"> <property name="countryName" 
+		value="India"></property> <property name="currencyName" value="Rupees"></property> 
+		<property name="states"> -->
+	<!-- <list> <value>Andhra Pradesh</value> <value>Arunachal Pradesh</value> 
+		<value>Assam</value> <value>Bihar</value> <value>Chhattisgarh</value> <value>Goa</value> 
+		<value>Gujrat</value> <value>Haryana</value> <value>Himachal Pradesh</value> 
+		<value>Jharkhand</value> <value>Karnataka</value> <value>Kerla</value> <value>Madhya 
+		Pradesh</value> <value>Maharastra</value> <value>Manipur</value> <value>Meghalaya</value> 
+		</list> <set> <value>Andhra Pradesh</value> <value>Arunachal Pradesh</value> 
+		<value>Assam</value> <value>Bihar</value> <value>Chhattisgarh</value> <value>Goa</value> 
+		<value>Gujrat</value> <value>Haryana</value> <value>Himachal Pradesh</value> 
+		<value>Jharkhand</value> <value>Karnataka</value> <value>Kerla</value> <value>Madhya 
+		Pradesh</value> <value>Maharastra</value> <value>Manipur</value> <value>Meghalaya</value> 
+		</set> <map> <entry key="AP" value="Andhra Pradesh"></entry> <entry key="ACP" 
+		value="Arunachal Pradesh"></entry> <entry key="AS" value="Assam"></entry> 
+		<entry key="BR" value="Bihar"></entry> <entry key="CG" value="Chhattisgarh"></entry> 
+		<entry key="GA" value="Goa"></entry> <entry key="GJ" value="Gujrat"></entry> 
+		<entry key="HR" value="Haryana"></entry> <entry key="HP" value="Himachal 
+		Pradesh"></entry> <entry key="JH" value="Jharkhand"></entry> </map> </property> 
+		</bean> -->
 
-	<bean id="ctry" class="com.example.Country">
-		<property name="countryName" value="India"></property>
-		<property name="currencyName" value="Rupees"></property>
-		<property name="states">
-		<!-- 
-			<list>
-			<value>Andhra Pradesh</value>
-			<value>Arunachal Pradesh</value>
-			<value>Assam</value>
-			<value>Bihar</value>
-			<value>Chhattisgarh</value>
-			<value>Goa</value>
-			<value>Gujrat</value>
-			<value>Haryana</value>
-			<value>Himachal Pradesh</value>
-			<value>Jharkhand</value>
-			<value>Karnataka</value>
-			<value>Kerla</value>
-			<value>Madhya Pradesh</value>
-			<value>Maharastra</value>
-			<value>Manipur</value>
-			<value>Meghalaya</value>
-			</list>
-			
-			<set>
-			<value>Andhra Pradesh</value>
-			<value>Arunachal Pradesh</value>
-			<value>Assam</value>
-			<value>Bihar</value>
-			<value>Chhattisgarh</value>
-			<value>Goa</value>
-			<value>Gujrat</value>
-			<value>Haryana</value>
-			<value>Himachal Pradesh</value>
-			<value>Jharkhand</value>
-			<value>Karnataka</value>
-			<value>Kerla</value>
-			<value>Madhya Pradesh</value>
-			<value>Maharastra</value>
-			<value>Manipur</value>
-			<value>Meghalaya</value>
-			</set>
-			-->
-			<map>
-			<entry key="AP" value="Andhra Pradesh"></entry>
-			<entry key="ACP" value="Arunachal Pradesh"></entry>
-			<entry key="AS" value="Assam"></entry>
-			<entry key="BR" value="Bihar"></entry>
-			<entry key="CG" value="Chhattisgarh"></entry>
-			<entry key="GA" value="Goa"></entry>
-			<entry key="GJ" value="Gujrat"></entry>
-			<entry key="HR" value="Haryana"></entry>
-			<entry key="HP" value="Himachal Pradesh"></entry>
-			<entry key="JH" value="Jharkhand"></entry>
-			</map>
-		</property>
+	<bean id="add1" class="com.example.Address">
+		<property name="hNo" value="#214-sector 1"></property>
+		<property name="streetName"
+			value="street number 2\2 parag street"></property>
+		<property name="city" value="Darbhanga"></property>
+		<property name="state" value="Bihar"></property>
 	</bean>
 
-
+	<bean id="person1" class="com.example.Person" autowire="byType">
+	<property name="ssn" value="120"></property>
+	<property name="name" value="Abhinav Jha"></property>
+	<property name="age" value="22"></property>
+	<!-- <property name="address" ref="add1"></property> -->
+	</bean>
+	
+	
 </beans>

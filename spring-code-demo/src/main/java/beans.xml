@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- XML defination of the bean -->
+	<bean id="wish1" class="com.example.Wish" destroy-method="wishDestroy" init-method="wishInit">
+		<property name="message" value="This is Abhinav Kumar Jha" />
+	</bean>
+
+</beans>

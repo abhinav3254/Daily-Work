@@ -1,18 +1,18 @@
 package com.example;
 
-import java.util.Map;
+import java.util.Set;
 
-public class Country {
+public class Country2 {
 	private String countryName;
 	private String currencyName;
-	private Map<String,String> states;
+	private Set<String> states;
 	public String getCountryName() {
 		return countryName;
 	}
 	public String getCurrencyName() {
 		return currencyName;
 	}
-	public Map<String, String> getStates() {
+	public Set<String> getStates() {
 		return states;
 	}
 	public void setCountryName(String countryName) {
@@ -21,16 +21,16 @@ public class Country {
 	public void setCurrencyName(String currencyName) {
 		this.currencyName = currencyName;
 	}
-	public void setStates(Map<String, String> states) {
+	public void setStates(Set<String> states) {
 		this.states = states;
-	}
-	public Country() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "Country [countryName=" + countryName + ", currencyName=" + currencyName + ", states=" + states + "]";
+	}
+	public Country2() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	

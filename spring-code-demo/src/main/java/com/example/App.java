@@ -13,8 +13,11 @@ public class App {
         ClassPathXmlApplicationContext container = new ClassPathXmlApplicationContext("beans.xml");
 //        Wish wish = container.getBean("wish1",Wish.class);
 //        System.out.println(wish.getMessage());
-        Person person = container.getBean("person1",Person.class);
-        System.out.println("person values are :- "+person);
+//        Person person = container.getBean("person1",Person.class);
+//        System.out.println("person values are :- "+person);
+        
+        Country country = container.getBean("ctry",Country.class);
+        System.out.println(country);
         
         container.close();
     }

@@ -1,18 +1,25 @@
 package com.example;
 
-import java.util.Set;
+import java.util.List;
 
-public class Country {
+public class Country1 {
 	private String countryName;
 	private String currencyName;
-	private Set<String> states;
+	@Override
+	public String toString() {
+		return "Country [countryName=" + countryName + ", currencyName=" + currencyName + ", states=" + states + "]";
+	}
+	private List<String> states;
+	
+	private Country1() {}
+	
 	public String getCountryName() {
 		return countryName;
 	}
 	public String getCurrencyName() {
 		return currencyName;
 	}
-	public Set<String> getStates() {
+	public List<String> getStates() {
 		return states;
 	}
 	public void setCountryName(String countryName) {
@@ -21,17 +28,8 @@ public class Country {
 	public void setCurrencyName(String currencyName) {
 		this.currencyName = currencyName;
 	}
-	public void setStates(Set<String> states) {
+	public void setStates(List<String> states) {
 		this.states = states;
 	}
-	@Override
-	public String toString() {
-		return "Country [countryName=" + countryName + ", currencyName=" + currencyName + ", states=" + states + "]";
-	}
-	public Country() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
 	
 }

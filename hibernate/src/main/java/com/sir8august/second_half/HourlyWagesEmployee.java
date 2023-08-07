@@ -31,6 +31,11 @@ public class HourlyWagesEmployee extends Employee {
 	public void setNoOfHours(int noOfHours) {this.noOfHours = noOfHours;}
 
 	public void setRatePerHour(double ratePerHour) {this.ratePerHour = ratePerHour;}
+
+	@Override
+	public String toString() {
+		return "HourlyWagesEmployee [noOfHours=" + noOfHours + ", ratePerHour=" + ratePerHour + "]";
+	}
 	
 	
 	

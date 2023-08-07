@@ -10,7 +10,7 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">3254</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<!-- <property name="hbm2ddl.auto">update</property> -->
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<!-- <mapping resource="Employee.hbm.xml"></mapping> 
 		<mapping class="com.example.entity.Employee"/> -->
@@ -36,12 +36,13 @@
 	<mapping class="com.sir8august.onetoone.Book"/>
 	<mapping class="com.sir8august.onetoone.Library"/>
 		
-		-->
+		
 		
 		<mapping class="com.sir8august.second_half.SalariedEmployee"/>
 		<mapping class="com.sir8august.second_half.Employee"/>
 		<mapping class="com.sir8august.second_half.HourlyWagesEmployee"/>
-		
+		-->
+		<mapping class="com.sir8august.query.demo.Address"/>
 
 	</session-factory>
 </hibernate-configuration>

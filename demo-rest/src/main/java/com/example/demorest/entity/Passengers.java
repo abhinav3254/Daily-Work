@@ -17,6 +17,15 @@ public class Passengers {
 	private int age;
 	@Column(name="train_number")
 	private int trainNumber;
+	
+	transient private Train train;
+	
+	public Train getTrain() {
+		return train;
+	}
+	public void setTrain(Train train) {
+		this.train = train;
+	}
 	public Passengers() {}
 	public Passengers(int passengerId, String name, long number, int age, int trainNumber) {
 		this.passengerId = passengerId;

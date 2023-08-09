@@ -26,10 +26,11 @@ public class TrainController {
 	TrainService trainService;
 	
 	@GetMapping(value = "api/v1/train/getAll",produces="application/json")
-	public ResponseEntity<Train> getAllTrains() {
+	public List<Train> getAllTrains() {
 		List<Train> trainList = trainService.getAllTrains();
-		if (trainList!=null) return new ResponseEntity<Train>(HttpStatus.OK);
-		return new ResponseEntity<Train>(HttpStatus.NOT_FOUND);
+//		if (trainList!=null) return trainList;
+		//return new ResponseEntity<Train>(HttpStatus.NOT_FOUND);
+		return trainList;
 	}
 	
 	@GetMapping(value = "api/v1/train/getAll/{id}",produces="application/json")

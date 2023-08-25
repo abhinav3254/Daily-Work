@@ -361,3 +361,41 @@ select ISNUMERIC(5567) as ans_ok;
 
 --if numeric it returns 1 else 0
 select ISNUMERIC('ab') as ans_ok;
+
+select * from u3;
+select sum(marks) as ans from u3;
+
+
+declare @n1 int;
+declare @n2 int;
+set @n1 = -1;
+set @n2 = 1;
+select sum(@n1+@n2) as sum_two;
+
+
+
+-- creating function in sql
+
+create function sum_custom(@num1 int,@num2 int)
+returns varchar(55)
+as begin 
+return @num1+@num2
+end
+
+
+select dbo.sum_custom(10,20) as result;
+
+-- creating table
+create table m1(
+id int identity(1,1) primary key,
+name_p varchar(55),
+maths int,
+science int
+);
+
+-- inserting values
+insert into m1 values('ajay',80,80),('suresh',90,60);
+--getting all the values
+select * from m1;
+-- using function inside select table command
+select name_p,dbo.sum_custom(maths,science) as ans_to from m1;

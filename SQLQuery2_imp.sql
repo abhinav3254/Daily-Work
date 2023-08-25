@@ -56,6 +56,7 @@ end;
 CREATE FUNCTION calculate_gpa1(@student_id INT) RETURNS DECIMAL(4, 2)
 BEGIN
     DECLARE @total_points DECIMAL(10, 2);
+	-- NUMBER OF COURSE
     DECLARE @total_credits INT;
     DECLARE @gpa DECIMAL(4, 2);
 
@@ -85,3 +86,40 @@ END;
 
 
 select s_id,s_name ,dbo.calculate_gpa1(s_id) as result from s1;  -- To fetch the results according to the grades
+
+/*
+how we are calculating gpa
+gpa = totalpoints/course
+gpa = (if a then 4 etc/ course means one student enrolled in how many courses)
+*/
+
+create function gpa1(@s_id int) returns decimal(4,2)
+begin
+declare @total_points decimal(10,2);
+declare @total_credits int;
+declare @gpa decimal(4,2)
+
+SELECT @total_points = COALESCE(SUM(
+        CASE grades
+            WHEN 'A' THEN 4.0
+            WHEN 'B' THEN 3.0
+            WHEN 'C' THEN 2.0
+            WHEN 'D' THEN 1.0
+            WHEN 'F' THEN 0.0
+            ELSE 0.0
+        END), 0)
+    FROM e1
+    WHERE s_id = @s_id;
+
+	SELECT @total_credits = COUNT(*)
+    FROM e1
+    WHERE s_id =@s_id;
+
+	if @total_credits > 0
+	set @gpa = @total_points / @total_credits;
+	else set @gpa = 0.0;
+	return @gpa
+end
+
+
+select s1.s_id,s1.s_name,dbo.gpa1(s_id) as r_result from s1;

@@ -53,16 +53,14 @@ end;
 */
 
 -- Create a function to calculate GPA
-CREATE FUNCTION calculate_gpa (@student_id INT) RETURNS DECIMAL(4, 2)
+CREATE FUNCTION calculate_gpa1(@student_id INT) RETURNS DECIMAL(4, 2)
 BEGIN
     DECLARE @total_points DECIMAL(10, 2);
     DECLARE @total_credits INT;
     DECLARE @gpa DECIMAL(4, 2);
 
- 
-
     SELECT @total_points = COALESCE(SUM(
-        CASE grade
+        CASE grades
             WHEN 'A' THEN 4.0
             WHEN 'B' THEN 3.0
             WHEN 'C' THEN 2.0
@@ -70,24 +68,20 @@ BEGIN
             WHEN 'F' THEN 0.0
             ELSE 0.0
         END), 0)
-    FROM enrollments
-    WHERE student_id = @student_id;
-
- 
+    FROM e1
+    WHERE s_id = @student_id;
 
     SELECT @total_credits = COUNT(*)
-    FROM enrollments
-    WHERE student_id = @student_id;
-
- 
+    FROM e1
+    WHERE s_id = @student_id;
 
     IF @total_credits > 0
         SET @gpa = @total_points / @total_credits;
     ELSE
         SET @gpa = 0.0;
 
- 
-
     RETURN @gpa;
 END;
 
+
+select s_id,s_name ,dbo.calculate_gpa1(s_id) as result from s1;  -- To fetch the results according to the grades

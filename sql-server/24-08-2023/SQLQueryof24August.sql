@@ -614,3 +614,115 @@ case
  else 'dont know'
  end as identitier
  from employee1;
+
+ /**************************************************************************************************************/
+
+ -- assignment
+
+ create table customer12(
+ cust_id int identity(101,1) primary key,
+ cust_name varchar(55),
+ cust_email varchar(55),
+ cust_dob datetime,
+ cust_city varchar(55),
+ register_date datetime,
+ last_update timestamp
+ );
+
+ -- making email id unique
+
+ alter table customer12
+ add constraint uq_email_key
+ unique (cust_email);
+
+ -- inserting values in customer12 table
+ insert into customer12(cust_name,cust_email,cust_dob,cust_city,register_date)
+ values ('James Hoog','james@gmail.com','2002-04-02','kolkata',getdate()),
+ ('Nail Knite','nail@gmail.com','1987-12-02','kanpur',getdate()),
+ ('Pit Alex','pit@gmail.com','1967-09-08','patna',getdate()),
+ ('Mc Lyon','mc@gmail.com','2007-02-28','bhopal',getdate()),
+ ('Paul Adam','paul@gmail.com','2001-11-28','indore',getdate());
+
+ -- getting all the values from the customers12 values
+ select * from customer12;
+
+ -- create table orders 
+ create table orders12(
+ o_id int identity(11,1) primary key,
+ cust_id int foreign key references customer12(cust_id),
+ o_name varchar(55),
+ o_category varchar(55),
+ o_date datetime,
+ o_quantity int,
+ o_price money,
+ o_delivery_date datetime
+ );
+
+ -- inserting values in orders12 table
+ insert into orders12(cust_id,o_name,o_category,o_date,o_quantity,o_price,o_delivery_date)
+ values (101,'biscuit','food',getdate(),2,20,GETDATE()),
+ (102,'coca cola','bevrage',getdate(),1,40,getdate()),
+ (101,'t shirt','clothing',getdate(),2,1499,getdate()),
+ (103,'keyboard','electronics',getdate(),1,19999,getdate()),
+ (103,'r s agarwal','education',getdate(),1,899,getdate()),
+ (103,'r d sharma','education',getdate(),1,1866,getdate());
+
+ -- getting all the values from the orders12 table
+ select * from orders12;
+
+
+ -- joining every fields of both the table
+ select customer12.* , orders12.* from customer12
+ join orders12
+ on customer12.cust_id = orders12.cust_id;
+
+ /*
+ 
+ Create two tables, Customer and Order, with appropriate columns. 
+ Perform an inner join to retrieve the following details for all ordered products:
+
+Product name
+Category
+Price
+Customer name
+Order date
+
+ */
+
+ select orders12.o_name,orders12.o_category,orders12.o_price,customer12.cust_name,orders12.o_date from orders12
+ join customer12
+ on customer12.cust_id = orders12.cust_id;
+
+
+
+ /*
+ 
+ Display All Products with Order Information
+
+Create a table to store Batch information and training information. Retrieve all product records along with:
+
+Product name
+Category
+Price
+Order information (if available)
+
+ */
+
+select orders12.o_name,orders12.o_category,orders12.o_price,orders12.o_quantity,customer12.cust_name from customer12
+join orders12
+on customer12.cust_id = orders12.cust_id;
+
+
+
+-- fetching all the columns of orders and only customer name from the customer table
+select orders12.*,customer12.cust_name from customer12
+join orders12
+on customer12.cust_id = orders12.cust_id order by o_price desc;
+
+
+
+-- fetching all the columns of orders and only customer name from the customer table with some conditions
+select orders12.*,customer12.cust_name from customer12
+join orders12
+on customer12.cust_id = orders12.cust_id where cust_name like '%e%';
+
